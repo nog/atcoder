@@ -36,6 +36,8 @@ when "test"
   `cd #{task_dir};oj test -c "#{test_command}"`
 when "submit"
   `cd #{task_dir};oj submit #{task_url} #{script_file} -y`
+when "git"
+  `git add #{task_dir};git commit -m "[#{lang}]#{contest}-#{task}";git push`
 else
   raise
 end
