@@ -24,15 +24,7 @@ func main() {
 		fmt.Println(0)
 		return
 	}
-	if k&1 == 1 {
-		cakes := maxCake - (k / 2) - 1
-		fmt.Println(2 * cakes)
-		return
-	} else {
-		cakes := maxCake - (k / 2)
-		fmt.Println(2*cakes - 1)
-		return
-	}
+	fmt.Println(maxCake - 1 - (k - maxCake))
 }
 
 type io struct {
