@@ -8,7 +8,7 @@ def main
 
   contest_dir = "#{__dir__}/contests/#{contest}"
   task_dir = "#{contest_dir}/#{task}"
-  task_url = "https://atcoder.jp/contests/#{contest}/tasks/#{contest}_#{task}"
+  task_url = get_task_url(contest, task)
 
   script_file = case lang
   when :ruby
@@ -43,6 +43,13 @@ def main
   else
     raise
   end
+end
+
+def get_task_url contest, task
+  return (
+    ENV['TASK_URL'] ||
+    "https://atcoder.jp/contests/#{contest}/tasks/#{contest}_#{task}"
+  )
 end
 
 def get_lang(name)
