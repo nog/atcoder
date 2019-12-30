@@ -13,7 +13,7 @@ def check a
 
   point = (V-P) * M
   skip_self = false
-  A[0,A.size - P].each do |aa|
+  A[0,A.size - (P - 1)].each do |aa|
     if aa == a && !skip_self
       skip_self = true
       next
