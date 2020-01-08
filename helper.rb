@@ -1,5 +1,7 @@
 #! /usr/bin/env ruby
 
+require 'securerandom'
+
 def main
   contest = ARGV[0]
   task    = ARGV[1]
@@ -19,22 +21,24 @@ def main
     raise
   end
 
-
+  image = docker_image(lang)
   case command
   when "setup"
     `mkdir -p #{task_dir}`
     `touch #{script_file}`
     `cd #{task_dir};oj download #{task_url}`
   when "test"
+    docker_name = "atcoder-#{SecureRandom.hex}"
+    `docker run -di --name=#{docker_name} -v #{__dir__}:/atcoder #{image} sleep 20`
+    docker_exec = "docker exec -i #{docker_name}"
     test_command = case lang
     when  :ruby
-      "ruby #{script_file}"
+      "#{docker_exec} ruby /atcoder/contests/#{contest}/#{task}/main.rb"
     when :golang
-      "go run #{script_file}"
+      "#{docker_exec} go run /atcoder/contests/#{contest}/#{task}/main.go"
     else
       raise
     end
-
     `cd #{task_dir};oj test -c "#{test_command}"`
   when "submit"
     `cd #{task_dir};oj submit #{task_url} #{script_file} -y`
@@ -59,6 +63,15 @@ def get_lang(name)
     go: :golang,
     golang: :golang
   }[name.to_sym]
+  raise unless result
+  result
+end
+
+def docker_image(lang)
+  result = {
+    ruby: "ruby:2.3",
+    golang: "golang:1.6"
+  }[lang]
   raise unless result
   result
 end
