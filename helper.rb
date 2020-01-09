@@ -4,6 +4,7 @@ require 'securerandom'
 
 def main
   contest = ARGV[0]
+  contest = contest.tr('-', '_')
   task    = ARGV[1]
   lang    = get_lang(ARGV[2])
   command = ARGV[3]
@@ -52,7 +53,7 @@ end
 def get_task_url contest, task
   return (
     ENV['TASK_URL'] ||
-    "https://atcoder.jp/contests/#{contest}/tasks/#{contest}_#{task}"
+    "https://atcoder.jp/contests/#{contest.tr('_', '-')}/tasks/#{contest}_#{task}"
   )
 end
 
