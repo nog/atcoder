@@ -5,7 +5,7 @@ if x >  a * a * b / 2.0
   puts rad.abs * 180 / Math::PI
   exit
 else
-  rad = (Math::PI / 2) - Math.atan((2*x)/(b*b*a).to_f)
+  rad = Math.atan(((b*b*a).to_f/(2*x)))
   puts rad * 180 / Math::PI
   exit
 end
