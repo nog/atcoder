@@ -18,6 +18,7 @@ zero_count = zero * (N -1)
 plus_count = (minus.size * ( minus.size - 1)) / 2 + (plus.size * (plus.size - 1)) / 2
 
 if K <= minus_count
+  
 elsif K <= minus_count + zero_count
   puts 0
 end
