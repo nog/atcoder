@@ -1,4 +1,4 @@
-baseURL = "https://nog.github.io/atcoder/"
+baseURL = "https://atcoder.nog.cc/"
 languageCode = "ja-jp"
 title = "nogのAtCoderの記録"
 theme = "anubis"
