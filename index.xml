@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nogのAtCoderの記録</title><link>https://atcoder.nog.cc/</link><description>nogのAtCoderの記録</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Sun, 05 Apr 2020 01:14:16 +0900</lastBuildDate><atom:link href="https://atcoder.nog.cc/index.xml" rel="self" type="application/rss+xml"/><item><title>ABC161参加の振り返り</title><link>https://atcoder.nog.cc/posts/abc161/</link><pubDate>Sun, 05 Apr 2020 01:14:16 +0900</pubDate><guid>https://atcoder.nog.cc/posts/abc161/</guid><description>&lt;h1 id="自分の解答">自分の解答&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>nogのAtCoderの記録</title><link>https://atcoder.nog.cc/</link><description>nogのAtCoderの記録</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Sun, 05 Apr 2020 01:14:16 +0900</lastBuildDate><atom:link href="https://atcoder.nog.cc/index.xml" rel="self" type="application/rss+xml"/><item><title>ABC161参加の振り返り</title><link>https://atcoder.nog.cc/posts/abc161/</link><pubDate>Sun, 05 Apr 2020 01:14:16 +0900</pubDate><guid>https://atcoder.nog.cc/posts/abc161/</guid><description>&lt;h1 id="成績">成績&lt;/h1>
+&lt;pre>&lt;code>成績：885位
+パフォーマンス：1592相当
+レーティング：1086→1156 (+70)
+&lt;/code>&lt;/pre>&lt;p>&lt;a href="https://atcoder.jp/users/nog/history/share/abc161">https://atcoder.jp/users/nog/history/share/abc161&lt;/a>&lt;/p>
+&lt;h1 id="自分の解答">自分の解答&lt;/h1>
 &lt;p>&lt;a href="https://atcoder.jp/contests/abc161/submissions?f.User=nog">https://atcoder.jp/contests/abc161/submissions?f.User=nog&lt;/a>&lt;/p>
 &lt;p>制限時間内に初めてFが解けた気がする。(ただしEは制限時間外になった。)&lt;/p>
 &lt;p>Bでかなり無駄に三回WA出してるのが非常にもったいない。&lt;/p>
