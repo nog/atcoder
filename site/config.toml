@@ -1,0 +1,8 @@
+baseURL = "http://example.org/"
+languageCode = "ja-jp"
+title = "nogのAtCoderの記録"
+theme = "anubis"
+hasCJKLanguage = true
+
+[taxonomies]
+    tag = "tags"
