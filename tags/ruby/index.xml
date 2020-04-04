@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ruby on nogのAtCoderの記録</title><link>http://example.org/tags/ruby/</link><description>nogのAtCoderの記録 (ruby)</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><lastBuildDate>Sun, 05 Apr 2020 01:14:16 +0900</lastBuildDate><atom:link href="http://example.org/tags/ruby/index.xml" rel="self" type="application/rss+xml"/><item><title>ABC161振り返り</title><link>http://example.org/posts/abc161/</link><pubDate>Sun, 05 Apr 2020 01:14:16 +0900</pubDate><guid>http://example.org/posts/abc161/</guid><description>&lt;h1 id="自分の解答">自分の解答&lt;/h1>
+&lt;p>&lt;a href="https://atcoder.jp/contests/abc161/submissions?f.User=nog">https://atcoder.jp/contests/abc161/submissions?f.User=nog&lt;/a>&lt;/p>
+&lt;p>制限時間内に初めてFが解けた気がする。(ただしEは制限時間外になった。)&lt;/p>
+&lt;p>Bでかなり無駄に三回WA出してるのが非常にもったいない。&lt;/p>
+&lt;p>Eも解けない問題ではなかった。初全完狙えた回だっただけに悔しい。&lt;/p>
+&lt;p>青パフォにギリギリ届かない水色パフォだった模様&lt;/p>
+&lt;h1 id="a---abc-swap">A - ABC Swap&lt;/h1>
+&lt;p>問題をよく読むのが遅くて割と時間かかる。&lt;/p>
+&lt;p>自分は大体2分位での提出なんだけど早い人達どういう風にやってるのかが気になる。&lt;/p>
+&lt;h1 id="b---popular-vote">B - Popular Vote&lt;/h1>
+&lt;p>境界の指定を間違えて三回もWAしてしまった。&lt;/p>
+&lt;p>不安な時は比較を整数で揃えるのが楽&lt;/p>
+&lt;h1 id="c---replacing-integer">C - Replacing Integer&lt;/h1>
+&lt;p>&lt;code>N mod K&lt;/code> もしくは &lt;code>K - ( N mod K )&lt;/code>の小さい方&lt;/p>
+&lt;h1 id="d---lunlun-number">D - Lunlun Number&lt;/h1>
+&lt;p>[1,2,3,4,5,6,7,8,9]を初期値として&lt;/p>
+&lt;p>次の桁をどんどん生成していきK個目が生成されるまでループして解いた。&lt;/p>
+&lt;p>解説のQueueを使うというの見て、なるほど〜となった。&lt;/p>
+&lt;p>Queue使えばめっちゃシンプルに書けていいですね。&lt;/p>
+&lt;h1 id="e---yutori">E - Yutori&lt;/h1>
+&lt;p>左からの最短と右からの最短をもとめて、比較するというのはすぐ浮かんだけど&lt;/p>
+&lt;p>それで本当にいいんだっけってのが分からず、ある程度考えて後回しにした。&lt;/p>
+&lt;p>結果時間足りず。&lt;/p>
+&lt;p>左から最短と右からの最短の配列を作って、同じ値になっている部分を出力で問題なかった。&lt;/p>
+&lt;h1 id="f---division-or-substraction">F - Division or Substraction&lt;/h1>
+&lt;p>入力例2,3の答えがどうやればREPLを弄って考えた。&lt;/p>
+&lt;p>Nの約数, N-1の約数が候補か。とわかってきたので&lt;/p>
+&lt;p>約数を全て出す関数を作成&lt;/p>
+&lt;p>N, N-1の全ての約数を候補としてuniqueしてsort&lt;/p>
+&lt;p>それらが条件を満たすか確認しつつ出力で通った。&lt;/p></description></item></channel></rss>
