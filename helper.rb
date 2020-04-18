@@ -60,6 +60,7 @@ end
 def get_lang(name)
   result = {
     ruby: :ruby,
+    ruby23: :ruby23,
     rb: :ruby,
     go: :golang,
     golang: :golang
@@ -70,7 +71,8 @@ end
 
 def docker_image(lang)
   result = {
-    ruby: "ruby:2.3",
+    ruby: "ruby:2.7.1",
+    ruby23: "ruby:2.3",
     golang: "golang:1.6"
   }[lang]
   raise unless result
