@@ -2,53 +2,50 @@ n = gets.to_i
 @n = n
 a = Array.new n 
 b = Array.new n 
-c = Array.new n
-d = {}
-e = {}
+c = {}
+zerozero = 0
 MOD = 1000000007
 n.times do |i|
-  a[i], b[i] = gets.split.map(&:to_i)
-  c[i] = a[i].to_f / b[i]
-  d[c[i]] ||= []
-  d[c[i]].push(i)
-  if d[1/-c[i]]
-    e[i] = d[1/-c[i]]
-    d[-1/c[i]].each do |_d|
-      e[_d] = d[c[i]]
+  _a, _b = gets.split.map(&:to_i)
+  a[i] = _a
+  b[i] = _b
+  if _a == 0 && _b == 0
+    zerozero += 1
+  elsif _a == 0
+    c[[0,-1]] ||= 0
+    c[[0,-1]] += 1
+  elsif _b == 0
+    c[[1,0]] ||= 0
+    c[[1,0]] += 1
+  else
+    if _a < 0
+      _a = - _a
+      _b = - _b
     end
+    gcd = _a.gcd(_b)
+    _a /= gcd 
+    _b /= gcd
+    c[[_a,_b]] ||= 0
+    c[[_a,_b]] += 1
   end
 end
 
-max = 20001
-@fac = Array.new max
-@finv = Array.new max
-@inv = Array.new max
-@fac[0] = 1
-@fac[1] = 1
-@finv[0] = 1
-@finv[1] = 1
-@inv[1] = 1
-2.upto(20000) do |i|
-  @fac[i] = @fac[i - 1] * i % MOD;
-  @inv[i] = MOD - @inv[MOD % i] * (MOD / i) % MOD;
-  @finv[i] = @finv[i - 1] * @inv[i] % MOD;
+result = 1
+c.each do |(_a, _b), count|
+  if _b < 0
+    _a = - _a
+    _b = - _b
+  end
+  if pair_count = c[[_b,- _a]]
+    c.delete([_b,-_a])
+    result *= (2**count - 1) + (2**pair_count -1) + 1
+  else
+    result *= (2**count)
+  end
+  result %= MOD
 end
 
-def com n, k
-  @fac[n] * ( @finv[k] * @finv[n-k] % MOD ) % MOD
-end
-
-p e
-anti = 0
-e.each do |k, ar|
-  anti += ar.size
-end
-anti = anti / 2
-
-result = n
-
-2.upto(n) do |i|
-  result += com n, i
-  result -= anti * com(n - 2, i - 2)
-end
-puts result
+result += zerozero
+result -= 1 # 何も選ばない時
+result %= MOD
+puts result 
