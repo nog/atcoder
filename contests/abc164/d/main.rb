@@ -1,41 +1,16 @@
-s = gets.chomp
-a = 2019
+s = gets.chomp.split('')
+MOD = 2019
 result = 0
-pat = []
-1.upto(999) do |i|
-  x = a * i
-  if x.to_s.include?('0')
-    next
+hash = { 0 => 1}
+d = 0
+
+s.reverse.each_with_index do |_s, i|
+  n = _s.to_i
+  d = (d + n * 10.pow(i, MOD)) % MOD
+  if hash[d]
+    result += hash[d]
   end
-  pat.push x
+  hash[d] ||= 0
+  hash[d] += 1
 end
-len = s.length
-pos = 0
-fregxp = Regexp.compile(pat.join("|"))
-matches = []
-while true do
-  m = s.match(fregxp, pos)
-  unless m 
-    break
-  end
-  pos = m.begin(0) + 1
-  matches.push([m.begin(0), m.end(0), m.end(0) - m.begin(0)])
-  result += 1
-end
-while match = matches.shift
-  e = match[1]
-  matches.each do |m2|
-    if m2[0] == e + 1
-      result += 1
-      e = m2[1]
-    end
-
-    if m2[0] > e + 1
-      break
-    end
-  end
-end
-
-
-
 puts result
