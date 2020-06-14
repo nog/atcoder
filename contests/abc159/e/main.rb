@@ -19,6 +19,7 @@ result = h * w
   w.times do |_w|
     h.times do |_h|
       if s[_h][_w] == 1
+        cnts[smap[_h]]
       end
     end
   end
