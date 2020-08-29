@@ -11,7 +11,6 @@ N.times do |i|
     be = i
     while(true) do
         ne = P[be] - 1
-        warn ne
         hist.push(be)
         checked[ne] = true
         points.push(C[ne])
@@ -29,31 +28,39 @@ N.times do |i|
 end
 warn "--"
 
-result  = C[0]
+result  = -999999999999999
 loops.each do |l|
     warn l.inspect
-    point = l[:points][0]
     cnt = l[:count]
-    k = nil
-    if l[:sum] > 0
-        k = K % cnt
+    q = []
+    if K <= cnt
+        q.push([0, K])
     else
-        k = K > cnt ? cnt : K
+        if l[:sum] <= 0
+            q.push([0, cnt])
+        else
+            q.push([K / cnt, K % cnt])
+            q.push([(K / cnt) - 1, cnt])
+        end
     end
+    s = Array.new cnt, -999999999
+    s[0] = 0
     cnt.times do |i|
         po = 0
-        k.times do |j|
+        (cnt - 1).times do |j|
             po += l[:points][(i+j) % cnt]
-            if po > point
-                point = po
+            if po > s[j+1]
+                s[j+1] = po
             end
         end
     end
-    if l[:sum] > 0
-        point += l[:sum] * (K / cnt)
-    end
-    if point > result
-        result = point
+    q.each do |qq|
+        point = 0
+        k = qq[1]
+        lcount = qq[0]
+        point = s[(lcount > 0 ? 0 : 1)..k].max
+        point += l[:sum] * lcount
+        result = point if point > result
     end
 end
 
