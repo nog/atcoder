@@ -34,5 +34,10 @@ dp[0] = true
     (l+1).upto(2*N) do |r|
         next if (r - l).even?
         w = (r - l + 1) / 2
+        ok = true
+        l.upto(l+w-1) do |x|
+            if inlist[x]
+                unless outlist[x+w]
+        end
     end
 end
