@@ -30,7 +30,7 @@ def main
     `cd #{task_dir};oj download #{task_url}`
   when "test"
     docker_name = "atcoder-#{SecureRandom.hex}"
-    `docker run -di --name=#{docker_name} -v #{__dir__}:/atcoder #{image} sleep 20`
+    `docker run -di --name=#{docker_name} -v #{__dir__}:/atcoder #{image} sleep 30`
     docker_exec = "docker exec -i #{docker_name}"
     test_command = case lang
     when  :ruby
@@ -40,7 +40,7 @@ def main
     else
       raise
     end
-    `cd #{task_dir};oj test -c "#{test_command}"`
+    system %Q(cd #{task_dir};oj test -c "#{test_command}")
   when "submit"
     `cd #{task_dir};oj submit #{task_url} #{script_file} -y -w 0`
   when "git"
