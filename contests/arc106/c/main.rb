@@ -8,3 +8,7 @@ end
 
 if M == 0
     result.push([1,2])
+if M > 0
+    result.push()
+else
+end
