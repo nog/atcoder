@@ -3,7 +3,6 @@ M = gets.to_i
 
 d = X.split('').sort[-1].to_i
 
-result = 0
 xlen = X.length
 xlist = X.split('').map(&:to_i).reverse.map.with_index{|n,i|
     n > 0 ? [i,n] : nil
@@ -20,7 +19,7 @@ end
 
 warn xlist.inspect
 
-a = (d+1...100000).bsearch do |d|
+a = ((d+1)...(M+100)).bsearch do |d|
     dd = d**(xlen)
     if dd <= M
         false
